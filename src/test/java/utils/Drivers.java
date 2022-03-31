@@ -68,10 +68,11 @@ public class Drivers {
 
         // CHROME DRIVER SETTINGS
         Map<String, Object> prefs = new HashMap<>();
+            // downloads folders
         prefs.put("download.default_directory", System.getProperty("user.dir"+ File.separator +"externalFiles"+ File.separator +"downloads"));
 
         ChromeOptions options = new ChromeOptions()
-                .setHeadless(false)
+                .setHeadless(true) // HEADLESS
                 .setExperimentalOption("prefs", prefs);
 
         return new ChromeDriver(options);
