@@ -5,15 +5,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Props {
-    private static Props PROPS;
+public class DriverConfig {
+    private static DriverConfig CONFIG;
     private static Properties props;
 
-    private Props() {
+    private DriverConfig() {
         props = new Properties();
         try {
-            // SITE URLS
-            props.load(new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\resources\\urls.properties"));
             // TEST CONFIGURATION
             props.load(new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\resources\\testConfig.properties"));
         } catch (IOException e) {
@@ -22,7 +20,7 @@ public class Props {
     }
 
     public static String getProp(String key) {
-        if (PROPS == null) PROPS = new Props();
+        if (CONFIG == null) CONFIG = new DriverConfig();
         return props.getProperty(key);
     }
 }
