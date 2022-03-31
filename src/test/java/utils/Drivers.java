@@ -72,7 +72,7 @@ public class Drivers {
         prefs.put("download.default_directory", System.getProperty("user.dir"+ File.separator +"externalFiles"+ File.separator +"downloads"));
 
         ChromeOptions options = new ChromeOptions()
-                .setHeadless(true) // HEADLESS
+                .setHeadless(false) // HEADLESS
                 .setExperimentalOption("prefs", prefs);
 
         return new ChromeDriver(options);
