@@ -3,7 +3,7 @@ package tests.page_tests;
 // SELENIUM : web driver
 import org.openqa.selenium.WebDriver;
 // TEST-NG
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 // CUSTOM
 import tests.page_object_models._Init_Factories;
@@ -25,6 +25,6 @@ public class _Base_Test {
         _Init_Factories poms = _Init_Factories.getFactories();
     }
 
-    @AfterTest
+    @AfterSuite
     public void teardown() { Drivers.quit(); }
 }
