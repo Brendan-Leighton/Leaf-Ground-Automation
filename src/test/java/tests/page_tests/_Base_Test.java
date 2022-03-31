@@ -2,6 +2,7 @@ package tests.page_tests;
 
 // SELENIUM : web driver
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 // TEST-NG
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -13,6 +14,8 @@ import utils.Waits;
 
 public class _Base_Test {
 
+    public Actions actions;
+
     @BeforeSuite
     public void setup() {
         // INITIALIZE WEB-DRIVER
@@ -23,6 +26,7 @@ public class _Base_Test {
         Waits waits = Waits.getWaits();
         Asserts asserts = Asserts.getAsserts();
         _Init_Factories poms = _Init_Factories.getFactories();
+        actions = new Actions(driver);
     }
 
     @AfterSuite
