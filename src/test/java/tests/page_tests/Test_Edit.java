@@ -1,6 +1,5 @@
 package tests.page_tests;
 // SELENIUM
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 // TEST-NG
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -52,7 +51,6 @@ public class Test_Edit extends _Base_Test {
         // INTERACTION
         Waits.forElement_andClick(inputField); // wait for input
         inputField.sendKeys(email);            // type email
-//        actions.sendKeys(Keys.TAB);            // tab away
 
         // ASSERT
         Assert.assertEquals(inputField.getAttribute("value"), email);
@@ -85,9 +83,9 @@ public class Test_Edit extends _Base_Test {
 
         // SETUP
         String originalText = "TestLeaf";
+        WebElement inputField = EDIT.getInputToGetTextFrom();
 
         // INTERACT
-        WebElement inputField = EDIT.getInputToGetTextFrom();
         Waits.forElement(inputField);
 
         // ASSERT
