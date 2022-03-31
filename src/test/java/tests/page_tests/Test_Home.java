@@ -8,7 +8,12 @@ import utils.Asserts;
 import utils.Drivers;
 import utils.Urls;
 
+/**
+ * Tests for the Home page.
+ */
 public class Test_Home extends _Base_Test {
+
+    // PROPS
     private Factory_Home HOME = _Init_Factories.getHome();
 
     @BeforeMethod
