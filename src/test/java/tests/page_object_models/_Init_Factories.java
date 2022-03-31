@@ -15,6 +15,7 @@ public class _Init_Factories {
     private static _Init_Factories FACTORIES;
     // POMs
     private final Factory_Home home;
+    private final Factory_Edit edit;
 
     // PAGE FACTORIES
 
@@ -22,6 +23,7 @@ public class _Init_Factories {
     private _Init_Factories(WebDriver driver) {
         // initialize factories
          this.home = new Factory_Home(driver);
+         this.edit = new Factory_Edit(driver);
     }
 
     // GETTER / INITIALIZER
@@ -38,5 +40,8 @@ public class _Init_Factories {
 
     public static Factory_Home getHome() {
         return getFactories().home;
+    }
+    public static Factory_Edit getEdit() {
+        return getFactories().edit;
     }
 }
