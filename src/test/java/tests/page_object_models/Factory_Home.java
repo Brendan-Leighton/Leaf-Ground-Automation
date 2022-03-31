@@ -37,7 +37,7 @@ public class Factory_Home extends Factory__Index {
     public WebElement pageLink_button;
 
     @FindBy (css = "a[href='pages/Link.html']")
-    public WebElement pageLink_link;
+    public WebElement pageLink_hyperlink;
 
     @FindBy (css = "a[href='pages/Image.html']")
     public WebElement pageLink_image;
@@ -46,7 +46,7 @@ public class Factory_Home extends Factory__Index {
     public WebElement pageLink_dropdown;
 
     @FindBy (css = "a[href='pages/radio.html']")
-    public WebElement pageLink_radio;
+    public WebElement pageLink_radioButton;
 
     @FindBy (css = "a[href='pages/checkbox.html']")
     public WebElement pageLink_checkbox;
@@ -120,8 +120,8 @@ public class Factory_Home extends Factory__Index {
         return pageLink_button;
     }
 
-    public WebElement getPageLink_link() {
-        return pageLink_link;
+    public WebElement getPageLink_hyperlink() {
+        return pageLink_hyperlink;
     }
 
     public WebElement getPageLink_image() {
@@ -132,8 +132,8 @@ public class Factory_Home extends Factory__Index {
         return pageLink_dropdown;
     }
 
-    public WebElement getPageLink_radio() {
-        return pageLink_radio;
+    public WebElement getPageLink_radioButton() {
+        return pageLink_radioButton;
     }
 
     public WebElement getPageLink_checkbox() {
