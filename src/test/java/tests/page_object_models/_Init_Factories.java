@@ -16,14 +16,14 @@ public class _Init_Factories {
     // POMs
     private final Factory_Home home;
     private final Factory_Edit edit;
-
-    // PAGE FACTORIES
+    private final Factory_Hyperlinks hyperlinks;
 
     // CONSTRUCTOR
     private _Init_Factories(WebDriver driver) {
         // initialize factories
          this.home = new Factory_Home(driver);
          this.edit = new Factory_Edit(driver);
+         this.hyperlinks = new Factory_Hyperlinks(driver);
     }
 
     // GETTER / INITIALIZER
@@ -44,4 +44,5 @@ public class _Init_Factories {
     public static Factory_Edit getEdit() {
         return getFactories().edit;
     }
+    public Factory_Hyperlinks getHyperlinks() { return hyperlinks; }
 }
