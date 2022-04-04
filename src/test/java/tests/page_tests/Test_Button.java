@@ -56,4 +56,19 @@ public class Test_Button extends _Base_Test {
         // ASSERT
         Assert.assertEquals(actualLocation, BUTTON.expectedLocation);
     }
+
+    /**
+     * BUTTON 3 - Find button color
+     */
+    @Test
+    public void VerifyButtonColor() {
+        // SETUP
+        WebElement button = BUTTON.getButtonFindColor();
+
+        // INTERACT
+        boolean actualIsCorrectColor = button.getAttribute("style").contains(BUTTON.button3Color);
+
+        // ASSERT
+        Assert.assertTrue(actualIsCorrectColor);
+    }
 }
