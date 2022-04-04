@@ -68,4 +68,29 @@ public class Test_Dropdown extends _Base_Test {
         assert optionToClick != null;
         Assert.assertEquals(optionToClick.getAttribute("selected"), "true");
     }
+
+    /**
+     * Dropdown 2 - Select via value attribute
+     */
+    @Test
+    public void VerifyIsOptionSelectableViaValue() {
+        // SETUP
+        WebElement selectEl = DROPDOWN.getDropdownSelectViaValue();
+        List<WebElement> optionEls = selectEl.findElements(By.tagName("option"));
+        WebElement optionToClick = null;
+
+        // INTERACT
+        for (WebElement el : optionEls) {
+            if (el.getAttribute("value").equals(DROPDOWN.dropdownOptionValue)) {
+                optionToClick = el;
+                break;
+            }
+        }
+        Waits.forElement_andClick(selectEl);
+        Waits.forElement_andClick(optionToClick);
+
+        // VERIFY
+        assert optionToClick != null;
+        Assert.assertEquals(optionToClick.getAttribute("selected"), "true");
+    }
 }
