@@ -1,7 +1,8 @@
 package tests.page_object_models;
-
+// SELENIUM
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+// CUSTOM UTILS
 import utils.Urls;
 
 public class Factory_Dropdown extends Factory__Index {
@@ -13,19 +14,19 @@ public class Factory_Dropdown extends Factory__Index {
 
     // LOCATORS
 
-    @FindBy(css = "section#dropdown1")
+    @FindBy(css = "select#dropdown1")
     private WebElement dropdownSelectViaIndex;
     public int dropdownOptionIndex = 1;
 
-    @FindBy(css = "section#dropdown2")
+    @FindBy(css = "select#dropdown2")
     private WebElement dropdownSelectViaText;
     public String dropdownOptionString = "Selenium";
 
-    @FindBy(css = "section#dropdown3")
+    @FindBy(css = "select#dropdown3")
     private WebElement dropdownSelectViaValue;
     public String dropdownOptionValue = "Selenium";
 
-    @FindBy(css = "section#dropdown")
+    @FindBy(css = "select#dropdown")
     private WebElement dropdownCountOptions;
     public int dropdownCountExpected = 5;
 
