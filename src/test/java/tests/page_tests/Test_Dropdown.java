@@ -70,7 +70,7 @@ public class Test_Dropdown extends _Base_Test {
     }
 
     /**
-     * Dropdown 2 - Select via value attribute
+     * Dropdown 3 - Select via value attribute
      */
     @Test
     public void VerifyIsOptionSelectableViaValue() {
@@ -92,5 +92,19 @@ public class Test_Dropdown extends _Base_Test {
         // VERIFY
         assert optionToClick != null;
         Assert.assertEquals(optionToClick.getAttribute("selected"), "true");
+    }
+
+    /**
+     * Dropdown 4 - count the option-tags
+     */
+    @Test
+    public void VerifyCountOfOptions() {
+        // SETUP
+        WebElement selectEl = DROPDOWN.getDropdownSelectViaValue();
+        int optionsCount = selectEl.findElements(By.tagName("option")).size();
+
+        // INTERACT
+        // VERIFY
+        Assert.assertEquals(optionsCount, DROPDOWN.dropdownCountExpected);
     }
 }
