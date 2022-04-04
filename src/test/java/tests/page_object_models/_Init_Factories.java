@@ -18,14 +18,16 @@ public class _Init_Factories {
     private final Factory_Edit edit;
     private final Factory_Hyperlinks hyperlinks;
     private final Factory_Button button;
+    private final Factory_Image image;
 
     // CONSTRUCTOR
     private _Init_Factories() {
         // initialize factories
-         this.home = new Factory_Home();
-         this.edit = new Factory_Edit();
-         this.hyperlinks = new Factory_Hyperlinks();
-         this.button = new Factory_Button();
+        this.home = new Factory_Home();
+        this.edit = new Factory_Edit();
+        this.hyperlinks = new Factory_Hyperlinks();
+        this.button = new Factory_Button();
+        this.image = new Factory_Image();
     }
 
     // GETTER / INITIALIZER
@@ -37,15 +39,20 @@ public class _Init_Factories {
     }
 
     /*
-    *   PAGE OBJECT GETTERS
-    */
+     *   PAGE OBJECT GETTERS
+     */
 
     public static Factory_Home getHome() {
         return getFactories().home;
     }
+
     public static Factory_Edit getEdit() {
         return getFactories().edit;
     }
+
     public Factory_Hyperlinks getHyperlinks() { return hyperlinks; }
+
+    public Factory_Image getImage() { return image; }
+
     public Factory_Button getButton() { return button; }
 }
