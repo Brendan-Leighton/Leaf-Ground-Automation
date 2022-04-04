@@ -2,6 +2,8 @@ package tests.page_tests;
 // SELENIUM
 import org.openqa.selenium.WebElement;
 // TEST-NG
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 // PAGE OBJECTS
 import org.testng.annotations.Test;
@@ -9,6 +11,7 @@ import tests.Helpers;
 import tests.page_object_models.Factory_Image;
 import tests.page_object_models._Init_Factories;
 import utils.Asserts;
+import utils.Drivers;
 import utils.Urls;
 
 public class Test_Image extends _Base_Test {
@@ -47,5 +50,21 @@ public class Test_Image extends _Base_Test {
         // INTERACT
         // ASSERT
         Helpers.Link_IsUnableToMakeConnection(IMAGE.getImageIsBroken());
+    }
+
+    /**
+     * Image 3 - is mouse clickable? Links to Home page.
+     */
+    @Test
+    public void VerifyImageIsClickableViaMouse() {
+        // SETUP
+        WebElement image = IMAGE.getImageClickWithKeyboardOrMouse();
+
+        // INTERACT
+        Actions mouseClick = new Actions(Drivers.getDriver());
+        mouseClick.click(image).perform();
+
+        // ASSERT
+        Asserts.navigation_toUrl(IMAGE.getUrlHome());
     }
 }
