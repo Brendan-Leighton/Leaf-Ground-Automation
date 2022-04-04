@@ -1,9 +1,11 @@
 package tests.page_tests;
-
+// TEST-NG
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+// PAGE OBJECT MODELS
 import tests.page_object_models.Factory_Home;
 import tests.page_object_models._Init_Factories;
+// CUSTOM UTIL
 import utils.Asserts;
 import utils.Drivers;
 import utils.Urls;
