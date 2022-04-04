@@ -43,4 +43,29 @@ public class Test_Dropdown extends _Base_Test {
         // VERIFY
         Assert.assertEquals(optionToClick.getAttribute("selected"), "true");
     }
+
+    /**
+     * Dropdown 2 - Select via text
+     */
+    @Test
+    public void VerifyIsOptionSelectableViaText() {
+        // SETUP
+        WebElement selectEl = DROPDOWN.getDropdownSelectViaText();
+        List<WebElement> optionEls = selectEl.findElements(By.tagName("option"));
+        WebElement optionToClick = null;
+
+        // INTERACT
+        for (WebElement el : optionEls) {
+            if (el.getText().equals(DROPDOWN.dropdownOptionString)) {
+                optionToClick = el;
+                break;
+            }
+        }
+        Waits.forElement_andClick(selectEl);
+        Waits.forElement_andClick(optionToClick);
+
+        // VERIFY
+        assert optionToClick != null;
+        Assert.assertEquals(optionToClick.getAttribute("selected"), "true");
+    }
 }
