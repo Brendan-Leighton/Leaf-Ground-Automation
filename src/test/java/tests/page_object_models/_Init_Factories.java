@@ -19,6 +19,7 @@ public class _Init_Factories {
     private final Factory_Hyperlinks hyperlinks;
     private final Factory_Button button;
     private final Factory_Image image;
+    private final Factory_Dropdown dropdown;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -28,6 +29,7 @@ public class _Init_Factories {
         this.hyperlinks = new Factory_Hyperlinks();
         this.button = new Factory_Button();
         this.image = new Factory_Image();
+        this.dropdown = new Factory_Dropdown();
     }
 
     // GETTER / INITIALIZER
@@ -55,4 +57,6 @@ public class _Init_Factories {
     public Factory_Image getImage() { return image; }
 
     public Factory_Button getButton() { return button; }
+
+    public Factory_Dropdown getDropdown() { return dropdown; }
 }
