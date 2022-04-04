@@ -4,8 +4,11 @@ import org.openqa.selenium.WebElement;
 // TEST-NG
 import org.testng.annotations.BeforeMethod;
 // PAGE OBJECTS
+import org.testng.annotations.Test;
 import tests.page_object_models.Factory_Image;
 import tests.page_object_models._Init_Factories;
+import utils.Asserts;
+import utils.Urls;
 
 public class Test_Image extends _Base_Test {
 
@@ -19,5 +22,18 @@ public class Test_Image extends _Base_Test {
     @BeforeMethod
     public void GoToThisPage() {
         IMAGE.navigateTo(HomePageLink);
+    }
+
+    /**
+     * Image 1 - links to home page
+     */
+    @Test
+    public void VerifyImageNavigatesToHomePage() {
+        // SETUP
+        WebElement image = IMAGE.getImageGoHome();
+
+        // INTERACT
+        // VERIFY
+        Asserts.navigation_fromElement_toUrl(image, Urls.get("home"));
     }
 }
