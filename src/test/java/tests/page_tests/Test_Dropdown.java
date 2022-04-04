@@ -1,13 +1,16 @@
 package tests.page_tests;
-
+// SELENIUM
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+// TEST-NG
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+// PAGE OBJECTS
 import tests.page_object_models.Factory_Dropdown;
-import tests.page_object_models.Factory_Image;
 import tests.page_object_models._Init_Factories;
+// CUSTOM UTILS
 import utils.Waits;
 
 import java.util.List;
@@ -106,5 +109,23 @@ public class Test_Dropdown extends _Base_Test {
         // INTERACT
         // VERIFY
         Assert.assertEquals(optionsCount, DROPDOWN.dropdownCountExpected);
+    }
+
+    /**
+     * Dropdown 5 - select via SendKeys
+     */
+    @Test
+    public void VerifyIsOptionSelectableViaSendKeys() {
+        // SETUP
+        WebElement selectEl = DROPDOWN.getDropdownSelectViaSendKeys();
+        WebElement optionToSelect = selectEl.findElement(By.xpath("option[@value='1']"));
+
+        // INTERACT
+        Waits.forElement_andClick(selectEl);
+        selectEl.sendKeys(Keys.ARROW_DOWN);
+        selectEl.sendKeys(Keys.ENTER);
+
+        // VERIFY
+        Assert.assertEquals(optionToSelect.getAttribute("selected"), "true");
     }
 }
