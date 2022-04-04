@@ -1,5 +1,6 @@
 package tests.page_tests;
 // SELENIUM
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 // TEST-NG
@@ -70,5 +71,20 @@ public class Test_Button extends _Base_Test {
 
         // ASSERT
         Assert.assertTrue(actualIsCorrectColor);
+    }
+
+    /**
+     * BUTTON 4 - Find button size
+     */
+    @Test
+    public void VerifyButtonSize() {
+        // SETUP
+        WebElement button = BUTTON.getButtonFindSize();
+
+        // INTERACT
+        Dimension actualDimension = button.getSize();
+
+        // ASSERT
+        Assert.assertEquals(actualDimension, BUTTON.button4ExpectedSize);
     }
 }

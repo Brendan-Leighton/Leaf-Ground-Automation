@@ -1,5 +1,6 @@
 package tests.page_object_models;
 // SELENIUM
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +30,7 @@ public class Factory_Button extends Factory__Index {
 
     @FindBy(css = "button#size")
     private WebElement buttonFindSize;
+    public Dimension button4ExpectedSize = new Dimension(123, 20);
 
     // GETTERS
 
