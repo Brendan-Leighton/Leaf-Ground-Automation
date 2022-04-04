@@ -18,7 +18,7 @@ public class Factory_Dropdown extends Factory__Index {
     private WebElement dropdownSelectViaIndex;
     public int dropdownOptionIndex = 1;
 
-    @FindBy(css = "select#dropdown2")
+    @FindBy(css = "select[name='dropdown2']")
     private WebElement dropdownSelectViaText;
     public String dropdownOptionString = "Selenium";
 
