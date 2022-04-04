@@ -14,6 +14,10 @@ import utils.Drivers;
 import utils.Urls;
 import utils.Waits;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class Test_Hyperlinks extends _Base_Test {
@@ -70,10 +74,40 @@ public class Test_Hyperlinks extends _Base_Test {
     }
 
     /**
-     * Link 3 - Find where the link navigates to.
+     * Link 3 - test 1 - Is the link broken?.
+     * 
+     * Link is broken so verify it is broken
      */
     @Test
     public void IsLinkBroken() {
+        // SETUP
+        String urlStr = HYPERLINKS.getLinkIsItBroken().getAttribute("href");
+        boolean isLinkBroken = false;
+
+        // INTERACT
+        try {
+            if (urlStr != null) {
+                URL url = new URL(urlStr);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setRequestMethod("GET");
+                urlConnection.connect();
+                isLinkBroken = (urlConnection.getResponseCode() >= 400);
+            }
+        } catch (IOException e) {
+            isLinkBroken = true;
+        }
+
+        // VERIFY
+        Assert.assertTrue(isLinkBroken);
+    }
+
+    /**
+     * Link 3 - test 2 - Is the link broken?.
+     *
+     * Link is broken so verify it is broken
+     */
+    @Test
+    public void IsBrokenLinkNavigatingTo404() {
         // SETUP
         WebElement link = HYPERLINKS.getLinkIsItBroken();
 
