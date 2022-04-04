@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 // POM's
 import org.testng.annotations.Test;
+import tests.Helpers;
 import tests.page_object_models.Factory_Hyperlinks;
 import tests.page_object_models._Init_Factories;
 // UTILS
@@ -81,24 +82,9 @@ public class Test_Hyperlinks extends _Base_Test {
     @Test
     public void IsLinkBroken() {
         // SETUP
-        String urlStr = HYPERLINKS.getLinkIsItBroken().getAttribute("href");
-        boolean isLinkBroken = false;
-
         // INTERACT
-        try {
-            if (urlStr != null) {
-                URL url = new URL(urlStr);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.connect();
-                isLinkBroken = (urlConnection.getResponseCode() >= 400);
-            }
-        } catch (IOException e) {
-            isLinkBroken = true;
-        }
-
         // VERIFY
-        Assert.assertTrue(isLinkBroken);
+        Assert.assertTrue(Helpers.Link_IsUnableToMakeConnection(HYPERLINKS.getLinkIsItBroken()));
     }
 
     /**
@@ -109,13 +95,9 @@ public class Test_Hyperlinks extends _Base_Test {
     @Test
     public void IsBrokenLinkNavigatingTo404() {
         // SETUP
-        WebElement link = HYPERLINKS.getLinkIsItBroken();
-
         // INTERACT
-        Waits.forElement_andClick(link);
-
         // VERIFY
-        Assert.assertEquals(Urls.get("404"), Drivers.getDriver().getCurrentUrl());
+        Helpers.Link_IsNavigatingTo404Page(HYPERLINKS.getLinkIsItBroken());
     }
 
     /**
