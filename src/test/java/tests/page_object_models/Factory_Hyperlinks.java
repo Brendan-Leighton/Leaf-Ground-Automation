@@ -12,7 +12,7 @@ public class Factory_Hyperlinks extends Factory__Index {
     // CONSTRUCTOR - only one
     public Factory_Hyperlinks(WebDriver driver) {
         // SUPER
-        super(Urls.get("hyperlinks"));
+        super(Urls.get("hyperlink"));
         // POM FACTORY
         PageFactory.initElements(driver, this);
     }
@@ -22,23 +22,21 @@ public class Factory_Hyperlinks extends Factory__Index {
     @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
     private WebElement linkHome;
 
-    @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
+    @FindBy(css = "section:nth-child(1) > div:nth-child(4) >div>div> a")
     private WebElement linkFindWhereItGoes;
 
-    @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
+    @FindBy(css = "section:nth-child(1) > div:nth-child(7) >div>div> a")
     private WebElement linkIsItBroken;
 
-    @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
+    @FindBy(css = "section:nth-child(1) > div:nth-child(10) >div>div> a")
     private WebElement linkHomeDuplicate;
 
-    @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
+    @FindBy(css = "section:nth-child(1) > div:nth-child(13) >div>div> a")
     private WebElement linkCountTheNumberOfLinks;
 
     // GETTERS
 
-    public WebElement getLinkHome() {
-        return linkHome;
-    }
+    public WebElement getLinkHome() { return linkHome; }
 
     public WebElement getLinkFindWhereItGoes() {
         return linkFindWhereItGoes;
