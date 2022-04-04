@@ -17,19 +17,21 @@ public class _Init_Factories {
     private final Factory_Home home;
     private final Factory_Edit edit;
     private final Factory_Hyperlinks hyperlinks;
+    private final Factory_Button button;
 
     // CONSTRUCTOR
-    private _Init_Factories(WebDriver driver) {
+    private _Init_Factories() {
         // initialize factories
-         this.home = new Factory_Home(driver);
-         this.edit = new Factory_Edit(driver);
-         this.hyperlinks = new Factory_Hyperlinks(driver);
+         this.home = new Factory_Home();
+         this.edit = new Factory_Edit();
+         this.hyperlinks = new Factory_Hyperlinks();
+         this.button = new Factory_Button();
     }
 
     // GETTER / INITIALIZER
     public static _Init_Factories getFactories() {
         if (FACTORIES == null) {
-            FACTORIES = new _Init_Factories(Drivers.getDriver());
+            FACTORIES = new _Init_Factories();
         }
         return FACTORIES;
     }
@@ -45,4 +47,5 @@ public class _Init_Factories {
         return getFactories().edit;
     }
     public Factory_Hyperlinks getHyperlinks() { return hyperlinks; }
+    public Factory_Button getButton() { return button; }
 }

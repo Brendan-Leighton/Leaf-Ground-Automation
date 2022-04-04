@@ -13,7 +13,7 @@ import utils.Urls;
 public class Factory_Edit extends Factory__Index {
 
     // CONSTRUCTOR - only one
-    public Factory_Edit(WebDriver driver) {
+    public Factory_Edit() {
         // SUPER
         super(Urls.get("edit"));
     }

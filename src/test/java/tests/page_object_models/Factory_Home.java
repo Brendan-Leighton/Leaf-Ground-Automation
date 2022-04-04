@@ -13,7 +13,7 @@ import utils.Urls;
 public class Factory_Home extends Factory__Index {
 
     // CONSTRUCTOR - only one
-    public Factory_Home(WebDriver driver) {
+    public Factory_Home() {
         // SUPER
         super(Urls.get("home"));
     }

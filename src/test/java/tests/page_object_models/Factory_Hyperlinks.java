@@ -10,7 +10,7 @@ import utils.Urls;
 public class Factory_Hyperlinks extends Factory__Index {
 
     // CONSTRUCTOR - only one
-    public Factory_Hyperlinks(WebDriver driver) {
+    public Factory_Hyperlinks() {
         // SUPER
         super(Urls.get("hyperlink"));
     }

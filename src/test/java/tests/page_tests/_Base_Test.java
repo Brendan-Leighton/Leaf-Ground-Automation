@@ -21,11 +21,11 @@ public class _Base_Test {
         // INITIALIZE WEB-DRIVER
         WebDriver driver = Drivers.getDriver();
         driver.manage().window().maximize();
-
-        // INITIALIZE UTILS - these require a WebDriver
+        _Init_Factories poms = _Init_Factories.getFactories();
         Waits waits = Waits.getWaits();
         Asserts asserts = Asserts.getAsserts();
-        _Init_Factories poms = _Init_Factories.getFactories();
+
+        // INITIALIZE UTILS - these require a WebDriver
         actions = new Actions(driver);
     }
 
