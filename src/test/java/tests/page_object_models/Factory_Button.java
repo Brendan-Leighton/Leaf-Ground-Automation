@@ -14,8 +14,33 @@ public class Factory_Button extends Factory__Index {
 
     // LOCATORS
 
-    @FindBy(css = "section:nth-child(1) > div:nth-child(1) >div>div> a")
-    private WebElement linkHome;
+    @FindBy(css = "button#home")
+    private WebElement buttonHome;
+
+    @FindBy(css = "button#position")
+    private WebElement buttonFindPosition;
+
+    @FindBy(css = "button#color")
+    private WebElement buttonFindColor;
+
+    @FindBy(css = "button#size")
+    private WebElement buttonFindSize;
 
     // GETTERS
+
+    public WebElement getButtonHome() {
+        return buttonHome;
+    }
+
+    public WebElement getButtonFindPosition() {
+        return buttonFindPosition;
+    }
+
+    public WebElement getButtonFindColor() {
+        return buttonFindColor;
+    }
+
+    public WebElement getButtonFindSize() {
+        return buttonFindSize;
+    }
 }
