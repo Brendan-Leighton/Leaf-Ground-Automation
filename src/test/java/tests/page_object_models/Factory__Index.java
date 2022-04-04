@@ -4,6 +4,7 @@ package tests.page_object_models;
 import org.openqa.selenium.WebElement;
 // CUSTOM
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import utils.Asserts;
 import utils.Drivers;
 import utils.Waits;
@@ -33,6 +34,9 @@ public abstract class Factory__Index {
 
     public Factory__Index(String webPageUrl) {
         pageUrl = webPageUrl;
+
+        // POM FACTORY
+        PageFactory.initElements(Drivers.getDriver(), this);
     }
 
     // LOCATORS & GETTERS

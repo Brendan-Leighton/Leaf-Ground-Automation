@@ -13,12 +13,9 @@ import utils.Urls;
 public class Factory_Home extends Factory__Index {
 
     // CONSTRUCTOR - only one
-
     public Factory_Home(WebDriver driver) {
         // SUPER
         super(Urls.get("home"));
-        // POM FACTORY
-        PageFactory.initElements(driver, this);
     }
 
     // LOCATORS

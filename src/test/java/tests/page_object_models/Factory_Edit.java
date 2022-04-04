@@ -16,8 +16,6 @@ public class Factory_Edit extends Factory__Index {
     public Factory_Edit(WebDriver driver) {
         // SUPER
         super(Urls.get("edit"));
-        // POM FACTORY
-        PageFactory.initElements(driver, this);
     }
 
     // LOCATORS

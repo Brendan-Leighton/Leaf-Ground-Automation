@@ -13,8 +13,6 @@ public class Factory_Hyperlinks extends Factory__Index {
     public Factory_Hyperlinks(WebDriver driver) {
         // SUPER
         super(Urls.get("hyperlink"));
-        // POM FACTORY
-        PageFactory.initElements(driver, this);
     }
 
     // LOCATORS
