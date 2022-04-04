@@ -81,4 +81,19 @@ public class Test_Hyperlinks extends _Base_Test {
         Assert.assertEquals(Urls.get("404"), Drivers.getDriver().getCurrentUrl());
     }
 
+    /**
+     * Link 4 - Handle a link with a duplicate name.
+     */
+    @Test
+    public void DuplicateLinkName() {
+        // SETUP
+        WebElement link = HYPERLINKS.getLinkHomeDuplicate();
+
+        // INTERACT
+        Waits.forElement_andClick(link);
+
+        // VERIFY
+        Asserts.navigation_toUrl(HYPERLINKS.getUrlHome());
+    }
+
 }
