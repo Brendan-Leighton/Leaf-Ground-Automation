@@ -66,4 +66,19 @@ public class Test_Hyperlinks extends _Base_Test {
         Assert.assertEquals(expectedHref, linksHref);
     }
 
+    /**
+     * Link 3 - Find where the link navigates to.
+     */
+    @Test
+    public void IsLinkBroken() {
+        // SETUP
+        WebElement link = HYPERLINKS.getLinkIsItBroken();
+
+        // INTERACT
+        Waits.forElement_andClick(link);
+
+        // VERIFY
+        Assert.assertEquals(Urls.get("404"), Drivers.getDriver().getCurrentUrl());
+    }
+
 }
