@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 // PAGE OBJECTS
 import org.testng.annotations.Test;
+import tests.Helpers;
 import tests.page_object_models.Factory_Image;
 import tests.page_object_models._Init_Factories;
 import utils.Asserts;
@@ -35,5 +36,16 @@ public class Test_Image extends _Base_Test {
         // INTERACT
         // VERIFY
         Asserts.navigation_fromElement_toUrl(image, Urls.get("home"));
+    }
+
+    /**
+     * Image 2 - is image broken, does it connect?
+     */
+    @Test
+    public void VerifyImageIsBroken_doesntMakeConnection() {
+        // SETUP
+        // INTERACT
+        // ASSERT
+        Helpers.Link_IsUnableToMakeConnection(IMAGE.getImageIsBroken());
     }
 }
