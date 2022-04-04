@@ -9,6 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 /**
  * <strong>This is a SINGLETON</strong> WebDriver Handler. Use "getDriver()" to initialize the WebDriver.
@@ -83,8 +86,19 @@ public class Drivers {
      * @return WebDriver Firefox edition
      */
     private WebDriver Firefox() {
+//        FirefoxOptions options = new FirefoxOptions().setHeadless(false);
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
+    }
+
+    /**
+     * SAFARI driver setup
+     * @return WebDriver Safari edition
+     */
+    private WebDriver Safari() {
+//        SafariOptions options = new SafariOptions();
+        WebDriverManager.safaridriver().setup();
+        return new SafariDriver();
     }
 }
 
