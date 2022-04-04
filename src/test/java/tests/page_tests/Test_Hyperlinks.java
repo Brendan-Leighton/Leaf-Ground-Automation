@@ -1,5 +1,6 @@
 package tests.page_tests;
 // SELENIUM
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -12,6 +13,8 @@ import utils.Asserts;
 import utils.Drivers;
 import utils.Urls;
 import utils.Waits;
+
+import java.util.List;
 
 public class Test_Hyperlinks extends _Base_Test {
 
@@ -94,6 +97,22 @@ public class Test_Hyperlinks extends _Base_Test {
 
         // VERIFY
         Asserts.navigation_toUrl(HYPERLINKS.getUrlHome());
+    }
+
+    /**
+     * Link 5 - Count the number of links on the page.
+     */
+    @Test
+    public void CountLinks() {
+        // SETUP
+        List<WebElement> aTags = Drivers.getDriver().findElements(By.cssSelector("a"));
+        int expectedCount = 6;
+
+        // INTERACT
+        int actualCount = aTags.size();
+
+        // VERIFY
+        Assert.assertEquals(actualCount, expectedCount);
     }
 
 }
