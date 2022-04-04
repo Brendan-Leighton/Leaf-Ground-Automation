@@ -1,5 +1,6 @@
 package tests.page_object_models;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.Urls;
@@ -19,6 +20,7 @@ public class Factory_Button extends Factory__Index {
 
     @FindBy(css = "button#position")
     private WebElement buttonFindPosition;
+    public Point expectedLocation = new Point(240, 304);
 
     @FindBy(css = "button#color")
     private WebElement buttonFindColor;
