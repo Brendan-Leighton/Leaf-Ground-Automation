@@ -1,15 +1,15 @@
 package tests.page_tests;
 // SELENIUM
 import org.openqa.selenium.WebElement;
-// TEST-NG
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+// TEST-NG
 import org.testng.annotations.BeforeMethod;
-// PAGE OBJECTS
 import org.testng.annotations.Test;
-import tests.Helpers;
+// PAGE OBJECTS
 import tests.page_object_models.Factory_Image;
 import tests.page_object_models._Init_Factories;
+// CUSTOM UTILS
+import tests.Helpers;
 import utils.Asserts;
 import utils.Drivers;
 import utils.Urls;
