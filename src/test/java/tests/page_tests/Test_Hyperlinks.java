@@ -1,6 +1,7 @@
 package tests.page_tests;
 // SELENIUM
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 // POM's
 import org.testng.annotations.Test;
@@ -9,6 +10,7 @@ import tests.page_object_models._Init_Factories;
 // UTILS
 import utils.Asserts;
 import utils.Drivers;
+import utils.Urls;
 import utils.Waits;
 
 public class Test_Hyperlinks extends _Base_Test {
@@ -32,6 +34,9 @@ public class Test_Hyperlinks extends _Base_Test {
         HYPERLINKS.TestLogoToHomeButton(HomePageLink);
     }
 
+    /**
+     * Link 1 - Verify link navigates to the Home page.
+     */
     @Test
     public void LinkNavigatesToHomePage() {
         // SETUP
@@ -42,6 +47,23 @@ public class Test_Hyperlinks extends _Base_Test {
 
         // VERIFY
         Asserts.navigation_toUrl(HYPERLINKS.getUrlHome());
+    }
+
+    /**
+     * Link 2 - Find where the link navigates to.
+     */
+    @Test
+    public void FindWhereTheLinkGoes() {
+        // SETUP
+        WebElement link = HYPERLINKS.getLinkFindWhereItGoes();
+        String expectedHref = Urls.get("button");
+
+        // INTERACT
+        Waits.forElement(link);
+        String linksHref = link.getAttribute("href");
+
+        // VERIFY
+        Assert.assertEquals(expectedHref, linksHref);
     }
 
 }
