@@ -1,14 +1,9 @@
 package tests.page_object_models;
-
-import org.openqa.selenium.WebDriver;
+// SELENIUM
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.internal.OkHttpClient;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utils.Asserts;
-import utils.Drivers;
+// CUSTOM UTILS
 import utils.Urls;
-import utils.Waits;
 
 public class Factory_Table extends Factory__Index {
 
@@ -23,6 +18,7 @@ public class Factory_Table extends Factory__Index {
     private WebElement table;
 
     // GETTERS
+
     public WebElement getTable() {
         return table;
     }
