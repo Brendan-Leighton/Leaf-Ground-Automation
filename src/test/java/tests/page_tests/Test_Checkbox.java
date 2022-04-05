@@ -52,4 +52,18 @@ public class Test_Checkbox extends _Base_Test {
         Assert.assertNull(checkbox_C.getAttribute("checked"));
         Assert.assertNull(checkbox_CPP.getAttribute("checked"));
     }
+
+    /**
+     * Make sure the checkbox is checked
+     */
+    @Test
+    public void VerifyCheckboxIsChecked() {
+        // SETUP
+        List<WebElement> checkboxes = CHECKBOX.getCheckboxeQuestions().get(1).findElements(By.tagName("input"));
+        WebElement checkbox = checkboxes.get(0);
+
+        // INTERACT
+        // ASSERT
+        Assert.assertEquals(checkbox.getAttribute("checked"), "true");
+    }
 }
