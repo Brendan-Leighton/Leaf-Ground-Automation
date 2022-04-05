@@ -19,6 +19,8 @@ public class Factory_RadioButton extends Factory__Index {
 
     @FindBy (css = "section.innerblock div:nth-child(4) >div>div")
     private WebElement radioFindSelected;
+    @FindBy (css = "section.innerblock div:nth-child(4) >div>div > input[value='1']")
+    private WebElement radioFindSelectedExpected;
 
     @FindBy (css = "section.innerblock div:nth-child(7) >div>div")
     private WebElement radioPickOptionProgramatically;
@@ -28,5 +30,9 @@ public class Factory_RadioButton extends Factory__Index {
     public WebElement getRadioSelectAnAnswer_yes() { return radioSelectAnAnswer_yes; }
     public WebElement getRadioSelectAnAnswer_no() { return radioSelectAnAnswer_no; }
     public WebElement getRadioFindSelected() { return radioFindSelected; }
+    public WebElement getRadioFindSelectedExpected() {
+        return radioFindSelectedExpected;
+    }
+
     public WebElement getRadioPickOptionProgramatically() { return radioPickOptionProgramatically; }
 }

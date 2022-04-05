@@ -1,5 +1,6 @@
 package tests.page_tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -8,6 +9,8 @@ import tests.page_object_models.Factory_Dropdown;
 import tests.page_object_models.Factory_RadioButton;
 import tests.page_object_models._Init_Factories;
 import utils.Waits;
+
+import java.util.List;
 
 public class Test_RadioButton extends _Base_Test {
 
@@ -55,5 +58,20 @@ public class Test_RadioButton extends _Base_Test {
 
         // VERIFY
         Assert.assertEquals(radioButton.getAttribute("selected"), "true");
+    }
+
+    /**
+     * Radio 2 - get default selection
+     */
+    @Test
+    public void VerifyDefaultSelection() {
+        // SETUP
+        WebElement radioButtonParentEl = RADIO.getRadioFindSelected();
+        List<WebElement> radioButtons = radioButtonParentEl.findElements(By.cssSelector("input[type='radio']"));
+
+        // INTERACT
+        // VERIFY
+        Assert.assertFalse(Boolean.parseBoolean(radioButtons.get(0).getAttribute("checked")));
+        Assert.assertTrue(Boolean.parseBoolean(radioButtons.get(1).getAttribute("checked")));
     }
 }
