@@ -46,11 +46,11 @@ public class Test_Checkbox extends _Base_Test {
         }
 
         // ASSERT
-        Assert.assertEquals(checkbox_Java.getAttribute("checked"), "true");
-        Assert.assertNull(checkbox_VB.getAttribute("checked"));
-        Assert.assertEquals(checkbox_SQL.getAttribute("checked"), "true");
-        Assert.assertNull(checkbox_C.getAttribute("checked"));
-        Assert.assertNull(checkbox_CPP.getAttribute("checked"));
+        Assert.assertTrue(checkbox_Java.isSelected()); // True
+        Assert.assertFalse(checkbox_VB.isSelected());  // F
+        Assert.assertTrue(checkbox_SQL.isSelected());  // True
+        Assert.assertFalse(checkbox_C.isSelected());   // F
+        Assert.assertFalse(checkbox_CPP.isSelected()); // F
     }
 
     /**
@@ -64,7 +64,7 @@ public class Test_Checkbox extends _Base_Test {
 
         // INTERACT
         // ASSERT
-        Assert.assertEquals(checkbox.getAttribute("checked"), "true");
+        Assert.assertTrue(checkbox.isSelected());
     }
 
     /**
