@@ -21,6 +21,7 @@ public class _Init_Factories {
     private final Factory_Image image;
     private final Factory_Dropdown dropdown;
     private final Factory_RadioButton radioButton;
+    private final Factory_Checkbox checkbox;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -32,6 +33,7 @@ public class _Init_Factories {
         this.image = new Factory_Image();
         this.dropdown = new Factory_Dropdown();
         this.radioButton = new Factory_RadioButton();
+        this.checkbox = new Factory_Checkbox();
     }
 
     // GETTER / INITIALIZER
@@ -72,5 +74,9 @@ public class _Init_Factories {
 
     public Factory_RadioButton getRadioButton() {
         return radioButton;
+    }
+
+    public Factory_Checkbox getCheckbox() {
+        return checkbox;
     }
 }
