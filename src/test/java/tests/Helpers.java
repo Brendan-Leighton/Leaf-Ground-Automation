@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import utils.Asserts;
 import utils.Drivers;
 import utils.Urls;
 import utils.Waits;
