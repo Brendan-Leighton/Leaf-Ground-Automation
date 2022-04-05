@@ -20,6 +20,7 @@ public class _Init_Factories {
     private final Factory_Button button;
     private final Factory_Image image;
     private final Factory_Dropdown dropdown;
+    private final Factory_RadioButton radioButton;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -30,6 +31,7 @@ public class _Init_Factories {
         this.button = new Factory_Button();
         this.image = new Factory_Image();
         this.dropdown = new Factory_Dropdown();
+        this.radioButton = new Factory_RadioButton();
     }
 
     // GETTER / INITIALIZER
@@ -52,11 +54,23 @@ public class _Init_Factories {
         return getFactories().edit;
     }
 
-    public Factory_Hyperlinks getHyperlinks() { return hyperlinks; }
+    public Factory_Hyperlinks getHyperlinks() {
+        return hyperlinks;
+    }
 
-    public Factory_Image getImage() { return image; }
+    public Factory_Image getImage() {
+        return image;
+    }
 
-    public Factory_Button getButton() { return button; }
+    public Factory_Button getButton() {
+        return button;
+    }
 
-    public Factory_Dropdown getDropdown() { return dropdown; }
+    public Factory_Dropdown getDropdown() {
+        return dropdown;
+    }
+
+    public Factory_RadioButton getRadioButton() {
+        return radioButton;
+    }
 }
