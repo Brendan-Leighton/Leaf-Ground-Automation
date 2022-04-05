@@ -34,8 +34,8 @@ public class Factory_Dropdown extends Factory__Index {
     private WebElement dropdownSelectViaSendKeys;
 
     @FindBy(css = "div.example:nth-child(16) > select")
-    private WebElement dropdownSelectMultiple;
-    public int[] dropdownMultipleOptions = {1, 4};
+    private WebElement dropdownSelectAfterScroll;
+    public int dropdownScrollOption = 4;
 
     // GETTERS
 
@@ -49,5 +49,5 @@ public class Factory_Dropdown extends Factory__Index {
 
     public WebElement getDropdownSelectViaSendKeys() { return dropdownSelectViaSendKeys; }
 
-    public WebElement getDropdownSelectMultiple() { return dropdownSelectMultiple; }
+    public WebElement getDropdownSelectAfterScroll() { return dropdownSelectAfterScroll; }
 }

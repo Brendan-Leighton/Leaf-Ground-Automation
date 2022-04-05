@@ -1,8 +1,11 @@
 package tests.page_tests;
 // SELENIUM
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 // TEST-NG
 import org.testng.annotations.BeforeMethod;
@@ -11,9 +14,11 @@ import org.testng.annotations.Test;
 import tests.page_object_models.Factory_Dropdown;
 import tests.page_object_models._Init_Factories;
 // CUSTOM UTILS
+import utils.Drivers;
 import utils.Waits;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Test_Dropdown extends _Base_Test {
 
@@ -127,5 +132,28 @@ public class Test_Dropdown extends _Base_Test {
 
         // VERIFY
         Assert.assertEquals(optionToSelect.getAttribute("selected"), "true");
+    }
+
+    /**
+     * Dropdown 6 - select after scroll
+     */
+    @Test
+    public void VerifyIsSelectableAfterScroll() {
+        // SETUP
+        WebElement selectEl = DROPDOWN.getDropdownSelectAfterScroll();
+        List<WebElement> options = selectEl.findElements(By.tagName("option"));
+        WebElement optionToSelect = options.get(DROPDOWN.dropdownScrollOption);
+
+        // INTERACT
+        Waits.forElement(selectEl);
+        JavascriptExecutor js = (JavascriptExecutor) Drivers.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", optionToSelect);
+        optionToSelect.click();
+
+        // VERIFY
+        Assert.assertNull(options.get(1).getAttribute("selected"));
+        Assert.assertNull(options.get(2).getAttribute("selected"));
+        Assert.assertNull(options.get(3).getAttribute("selected"));
+        Assert.assertEquals(options.get(4).getAttribute("selected"), "true");
     }
 }
