@@ -66,4 +66,24 @@ public class Test_Checkbox extends _Base_Test {
         // ASSERT
         Assert.assertEquals(checkbox.getAttribute("checked"), "true");
     }
+
+    /**
+     * Only deselect the checked boxes
+     */
+    @Test
+    public void VerifyAbleToDeleteCheckboxes() {
+        // SETUP
+        List<WebElement> checkboxes = CHECKBOX.getCheckboxeQuestions().get(2).findElements(By.tagName("input"));
+
+        // INTERACT
+        for(WebElement el : checkboxes) {
+            try {
+                if (el.getAttribute("checked").equals("true")) el.click();
+            } catch (NullPointerException ignore) {}
+        }
+
+        // ASSERT
+        Assert.assertFalse(checkboxes.get(0).isSelected());
+        Assert.assertFalse(checkboxes.get(1).isSelected());
+    }
 }
