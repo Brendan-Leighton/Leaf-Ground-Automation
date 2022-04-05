@@ -86,4 +86,32 @@ public class Test_Checkbox extends _Base_Test {
         Assert.assertFalse(checkboxes.get(0).isSelected());
         Assert.assertFalse(checkboxes.get(1).isSelected());
     }
+
+    /**
+     * Select languages you know
+     */
+    @Test
+    public void VerifySelectAll() {
+        // SETUP
+        List<WebElement> checkboxes = CHECKBOX.getCheckboxeQuestions().get(3).findElements(By.tagName("input"));
+        WebElement checkbox_1 = checkboxes.get(0);
+        WebElement checkbox_2 = checkboxes.get(1);
+        WebElement checkbox_3 = checkboxes.get(2);
+        WebElement checkbox_4 = checkboxes.get(3);
+        WebElement checkbox_5 = checkboxes.get(4);
+        WebElement checkbox_6 = checkboxes.get(5);
+
+        // INTERACT
+        for(WebElement el : checkboxes) {
+            if (!el.isSelected()) el.click();
+        }
+
+        // ASSERT
+        Assert.assertTrue(checkbox_1.isSelected());
+        Assert.assertTrue(checkbox_2.isSelected());
+        Assert.assertTrue(checkbox_3.isSelected());
+        Assert.assertTrue(checkbox_4.isSelected());
+        Assert.assertTrue(checkbox_5.isSelected());
+        Assert.assertTrue(checkbox_6.isSelected());
+    }
 }
