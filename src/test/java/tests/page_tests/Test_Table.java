@@ -37,4 +37,16 @@ public class Test_Table extends _Base_Test {
         // ASSERT
         Assert.assertEquals(tableHeaders.size(), 3);
     }
+
+    /**
+     * Count # of rows
+     */
+    @Test
+    public void CountNumberOfRows() {
+        // SETUP
+        List<WebElement> tableRows = TABLE.getTable().findElements(By.tagName("tr"));
+        // INTERACT
+        // ASSERT
+        Assert.assertEquals(tableRows.size(), 6);
+    }
 }
