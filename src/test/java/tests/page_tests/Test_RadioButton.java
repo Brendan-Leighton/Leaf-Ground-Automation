@@ -39,4 +39,21 @@ public class Test_RadioButton extends _Base_Test {
         // VERIFY
         Assert.assertEquals(radioButton.getAttribute("selected"), "true");
     }
+
+    /**
+     * Radio 1 - select a radio button
+     *
+     * Test 2 - select no
+     */
+    @Test
+    public void VerifyOption_no_IsSelectable() {
+        // SETUP
+        WebElement radioButton = RADIO.getRadioSelectAnAnswer_no();
+
+        // INTERACT
+        Waits.forElement_andClick(radioButton);
+
+        // VERIFY
+        Assert.assertEquals(radioButton.getAttribute("selected"), "true");
+    }
 }
