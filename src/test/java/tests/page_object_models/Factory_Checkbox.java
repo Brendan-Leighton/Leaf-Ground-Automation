@@ -12,14 +12,20 @@ public class Factory_Checkbox extends Factory__Index {
         super(Urls.get("checkbox"));
     }
 
-    // LOCATORS
-
+    // LOCATOR
     @FindBy (css = "section.innerblock:nth-child(1) div")
     private List<WebElement> CheckboxeQuestions;
+
+    // ANSWERS DATA
+    private int[] question_1_answers = {0, 2};
 
     // GETTERS
 
     public List<WebElement> getCheckboxeQuestions() {
         return CheckboxeQuestions;
+    }
+
+    public int[] getQuestion_1_answers() {
+        return question_1_answers;
     }
 }
