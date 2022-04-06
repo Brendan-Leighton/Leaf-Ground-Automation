@@ -1,5 +1,7 @@
 package tests.page_tests;
 // SELENIUM
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 // TEST-NG
@@ -72,5 +74,33 @@ public class Test_Alert extends _Base_Test {
 
         // assert text we got from alert
         Assert.assertEquals(alertText, "Press a button!");
+    }
+
+    /**
+     * Test 3 - Enter, type into input, and exit an alert
+     */
+    @Test
+    public void VerifyOpenTypeCloseAlert() {
+        // SETUP
+        WebElement buttonOpenAlert = ALERT.getAlertButtonThree();
+        WebDriverWait wait = new WebDriverWait(Drivers.getDriver(), 5);
+        WebDriver driver = Drivers.getDriver();
+        String expectedTextInAlert = "Please enter your training institute name";
+        String expectedTextAfterSubmit = "You should not have enjoyed learning at GenSpark as compared to TestLeaf! Right?";
+
+        // INTERACT
+        // click button
+        wait.until(ExpectedConditions.elementToBeClickable(buttonOpenAlert));
+        Interacts.click(buttonOpenAlert);
+        // handle alert
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = driver.switchTo().alert().getText().trim();
+        driver.switchTo().alert().sendKeys("GenSpark");
+        driver.switchTo().alert().accept();
+        String alertInputText = driver.findElement(By.cssSelector("p#result1")).getText().trim();
+
+        // assert text we got from alert
+        Assert.assertEquals(alertText, expectedTextInAlert);
+        Assert.assertEquals(alertInputText, expectedTextAfterSubmit);
     }
 }
