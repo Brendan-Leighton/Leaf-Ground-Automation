@@ -27,6 +27,7 @@ public class _Init_Factories {
     private final Factory_Alert alert;
     private final Factory_Frames frames;
     private final Factory_Window window;
+    private final Factory_Calendar calendar;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -43,6 +44,7 @@ public class _Init_Factories {
         this.alert = new Factory_Alert();
         this.frames = new Factory_Frames();
         this.window = new Factory_Window();
+        this.calendar = new Factory_Calendar();
     }
 
     // GETTER / INITIALIZER
@@ -93,15 +95,11 @@ public class _Init_Factories {
         return table;
     }
 
-    public Factory_Alert getAlert() {
-        return alert;
-    }
+    public Factory_Alert getAlert() { return alert; }
 
-    public Factory_Frames getFrames() {
-        return frames;
-    }
+    public Factory_Frames getFrames() { return frames; }
 
-    public Factory_Window getWindow() {
-        return window;
-    }
+    public Factory_Window getWindow() { return window; }
+
+    public Factory_Calendar getCalendar() { return calendar; }
 }
