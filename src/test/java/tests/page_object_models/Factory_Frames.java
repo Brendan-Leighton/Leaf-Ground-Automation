@@ -13,38 +13,20 @@ import utils.Urls;
 
 
 public class Factory_Frames extends Factory__Index {
+
+    // CONSTRUCTOR - only 1
     public Factory_Frames() {
         super(Urls.get("frame"));
-
-        frameOne_clickButton = iframes.get(0);
-        frameTwo_clickButtonInsideNestedFrame = iframes.get(0);
-        frameThree_countFrames = iframes.get(0);
     }
 
     // LOCATORS
     @FindBy (css = "section.innerblock > div#wrapframe > iframe")
     private List<WebElement> iframes;
 
-    private final WebElement frameOne_clickButton;
-    private final WebElement frameTwo_clickButtonInsideNestedFrame;
-    private final WebElement frameThree_countFrames;
-
     // GETTERS
 
     public List<WebElement> getIframes() {
         return iframes;
-    }
-
-    public WebElement getFrameOne_clickButton() {
-        return frameOne_clickButton;
-    }
-
-    public WebElement getFrameTwo_clickButtonInsideNestedFrame() {
-        return frameTwo_clickButtonInsideNestedFrame;
-    }
-
-    public WebElement getFrameThree_countFrames() {
-        return frameThree_countFrames;
     }
 
     /**
