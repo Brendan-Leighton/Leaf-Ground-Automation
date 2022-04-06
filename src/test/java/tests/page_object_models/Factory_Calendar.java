@@ -13,9 +13,6 @@ public class Factory_Calendar extends Factory__Index {
     @FindBy (css = "input#datepicker")
     private WebElement calendarInput;
 
-    @FindBy (css = "div#ui-datepicker-div")
-    private WebElement calendarPopup;
-
     @FindBy (css = "a[title='Next']")
     private WebElement calendarButtonNextPage;
 
@@ -26,10 +23,6 @@ public class Factory_Calendar extends Factory__Index {
 
     public WebElement getCalendarInput() {
         return calendarInput;
-    }
-
-    public WebElement getCalendarPopup() {
-        return calendarPopup;
     }
 
     public WebElement getCalendarButtonNextPage() {

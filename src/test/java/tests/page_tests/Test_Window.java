@@ -140,7 +140,6 @@ public class Test_Window extends _Base_Test {
         WebDriver driver = Drivers.getDriver();
         WebElement button = WINDOW.getWindowFour_waitForTwoWindows();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        String startingWindow = driver.getWindowHandle();
         Set<String> windows;
 
         // INTERACT
