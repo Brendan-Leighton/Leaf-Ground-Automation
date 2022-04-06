@@ -1,6 +1,7 @@
 package tests.page_object_models;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Factory;
 import utils.Drivers;
 
 /**
@@ -24,6 +25,7 @@ public class _Init_Factories {
     private final Factory_Checkbox checkbox;
     private final Factory_Table table;
     private final Factory_Alert alert;
+    private final Factory_Frames frames;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -38,6 +40,7 @@ public class _Init_Factories {
         this.checkbox = new Factory_Checkbox();
         this.table = new Factory_Table();
         this.alert = new Factory_Alert();
+        this.frames = new Factory_Frames();
     }
 
     // GETTER / INITIALIZER
@@ -90,5 +93,9 @@ public class _Init_Factories {
 
     public Factory_Alert getAlert() {
         return alert;
+    }
+
+    public Factory_Frames getFrames() {
+        return frames;
     }
 }
