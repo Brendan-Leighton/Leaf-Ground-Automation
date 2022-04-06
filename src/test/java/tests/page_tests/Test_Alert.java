@@ -103,4 +103,28 @@ public class Test_Alert extends _Base_Test {
         Assert.assertEquals(alertText, expectedTextInAlert);
         Assert.assertEquals(alertInputText, expectedTextAfterSubmit);
     }
+
+    /**
+     * Test 4  - Enter, get text that has line-breaks, and exit an alert
+     */
+    @Test
+    public void VerifyOpenGetTextWithLineBreaksAndExitAlert() {
+        // SETUP
+        WebElement buttonOpenAlert = ALERT.getAlertButtonThree();
+        WebDriverWait wait = new WebDriverWait(Drivers.getDriver(), 5);
+        WebDriver driver = Drivers.getDriver();
+        String expectedTextInAlert = "Hello\n How are you doing today?";
+
+        // INTERACT
+        // click button
+        wait.until(ExpectedConditions.elementToBeClickable(buttonOpenAlert));
+        Interacts.click(buttonOpenAlert);
+        // handle alert
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = driver.switchTo().alert().getText().trim();
+        driver.switchTo().alert().accept();
+
+        // assert text we got from alert
+        Assert.assertEquals(alertText, expectedTextInAlert);
+    }
 }
