@@ -1,4 +1,6 @@
 package tests.page_tests;
+// JAVA
+import java.util.List;
 // SELENIUM
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,17 +8,17 @@ import org.openqa.selenium.WebElement;
 // TEST-NG
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-// PAGE MODELS
 import org.testng.annotations.Test;
+import org.testng.Assert;
+// PAGE MODELS
 import tests.page_object_models.Factory_Calendar;
 import tests.page_object_models._Init_Factories;
+// CUSTOM UTILS
 import utils.Drivers;
 import utils.Interacts;
 
-import java.util.List;
-
+// CLASS
 public class Test_Calendar extends _Base_Test {
 
     // PROPS
