@@ -28,6 +28,7 @@ public class _Init_Factories {
     private final Factory_Frames frames;
     private final Factory_Window window;
     private final Factory_Calendar calendar;
+    private final Factory_Draggable draggable;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -45,6 +46,7 @@ public class _Init_Factories {
         this.frames = new Factory_Frames();
         this.window = new Factory_Window();
         this.calendar = new Factory_Calendar();
+        this.draggable = new Factory_Draggable();
     }
 
     // GETTER / INITIALIZER
@@ -102,4 +104,6 @@ public class _Init_Factories {
     public Factory_Window getWindow() { return window; }
 
     public Factory_Calendar getCalendar() { return calendar; }
+
+    public Factory_Draggable getDraggable() { return draggable; }
 }
