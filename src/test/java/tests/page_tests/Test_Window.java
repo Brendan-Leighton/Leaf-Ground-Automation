@@ -28,6 +28,9 @@ public class Test_Window extends _Base_Test {
     @BeforeMethod
     public void GoToThisPage() { WINDOW.navigateTo(HomePageLink); }
 
+    /**
+     * Test 1 - click button, new window opens
+     */
     @Test
     public void VerifyHomePageOpensInNewWindow() {
         // SETUP
@@ -53,6 +56,27 @@ public class Test_Window extends _Base_Test {
         windows = driver.getWindowHandles();
         Assert.assertEquals(windows.size(), 1);
         Assert.assertTrue(windows.contains(startingWindow));
+    }
 
+    /**
+     * test 2 - count number of open windows
+     */
+    @Test
+    public void VerifyOpenedWindowCount() {
+        // SETUP
+        WebDriver driver = Drivers.getDriver();
+        WebElement button = WINDOW.getWindowTwo_openMultipleWindows();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Set<String> windows;
+
+        // INTERACT
+        // click button
+        wait.until(ExpectedConditions.elementToBeClickable(button));
+        Interacts.click(button);
+        // get handles
+        windows = driver.getWindowHandles();
+
+        // ASSERT
+        Assert.assertEquals(windows.size(), 3);
     }
 }
