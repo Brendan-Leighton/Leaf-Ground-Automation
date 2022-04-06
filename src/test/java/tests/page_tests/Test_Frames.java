@@ -1,22 +1,21 @@
 package tests.page_tests;
 // SELENIUM
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 // TEST-NG
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-// PAGE MODELS
 import org.testng.annotations.Test;
+// PAGE MODELS
 import tests.page_object_models.Factory_Frames;
 import tests.page_object_models._Init_Factories;
+// CUSTOM UTILS
 import utils.Drivers;
 import utils.Interacts;
-
-import java.util.List;
 
 public class Test_Frames extends _Base_Test {
 
@@ -28,7 +27,9 @@ public class Test_Frames extends _Base_Test {
     // TESTS
 
     @BeforeMethod
-    public void GoToThisPage() { FRAMES.navigateTo(HomePageLink); }
+    public void GoToThisPage() {
+        FRAMES.navigateTo(HomePageLink);
+    }
 
     /**
      * Test 1 - click a button inside an iframe
@@ -52,6 +53,37 @@ public class Test_Frames extends _Base_Test {
 
         // ASSERT
         Assert.assertEquals(actualButtonText, expectedButtonText);
+    }
 
+    /**
+     * Test 2 - click a button inside a nested iframe
+     */
+    @Test
+    public void VerifyButtonInsideNestedIframeIsClickable() {
+        // SETUP
+        WebDriver driver = Drivers.getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement iframe = FRAMES.getIframes().get(1);
+        WebElement button;
+        String expectedButtonText = "Hurray! You Clicked Me.";
+        String actualButtonText = "";
+
+        // INTERACT
+        // frame 1
+        wait.until(ExpectedConditions.elementToBeClickable(iframe));
+        driver.switchTo().frame(iframe);
+        // frame 2
+        WebElement iframe2 = driver.findElement(By.cssSelector("#frame2")); // find the nested iframe
+        wait.until(ExpectedConditions.elementToBeClickable(iframe2));
+        driver.switchTo().frame(iframe2);
+
+        button = driver.findElement(By.cssSelector("button#Click1"));
+        Interacts.click(button);
+        actualButtonText = button.getText().
+
+                trim();
+
+        // ASSERT
+        Assert.assertEquals(actualButtonText, expectedButtonText);
     }
 }
