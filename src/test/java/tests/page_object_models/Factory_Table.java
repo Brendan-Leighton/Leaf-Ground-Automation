@@ -17,6 +17,9 @@ public class Factory_Table extends Factory__Index {
     @FindBy(css = "table[cellspacing=\"0\"]")
     private WebElement table;
 
+    // DATA
+    public String ExpectedResultQ4 = "tbody tr:nth-child(5) td:nth-child(3) input";
+
     // GETTERS
 
     public WebElement getTable() {

@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import tests.page_object_models.Factory_Table;
 import tests.page_object_models._Init_Factories;
+import utils.Interacts;
 
 import java.util.List;
 
@@ -91,5 +92,49 @@ public class Test_Table extends _Base_Test {
 
         // ASSERT
         Assert.assertEquals(actualValue, "80%");
+    }
+
+    /**
+     * Table test 4
+     * <p>
+     * Check the vital task for the least completed progress.
+     */
+    @Test
+    public void GetLeastVitalTask() {
+        // SETUP
+        WebElement expectedCheckbox = TABLE.getTable().findElement(By.cssSelector(TABLE.ExpectedResultQ4));
+        List<WebElement> tableRows = TABLE.getTable().findElements(By.tagName("tr"));
+        int lowestProgress = 100; // 100% is the highest possible
+        int rowNumWithLowestProgress = 1;  // first row of data (not counting header) is row 1
+
+        // INTERACT
+        // loop start
+        for (int rowNum = 1; rowNum < tableRows.size(); rowNum++) {
+            WebElement currentRow = tableRows.get(rowNum);
+
+            // get text
+            List<WebElement> td = currentRow.findElements(By.tagName("td"));
+            String rowText = td.get(1).getText().trim(); // the text is a description of the row
+
+            // try to convert string to int
+            int currentProgress = 100;
+            try {
+                currentProgress = Integer.parseInt(rowText.split("%")[0]);
+            } catch (Exception ignore) {}
+
+            // evaluate lowestProgress & rowNum
+            if (currentProgress < lowestProgress) {
+                lowestProgress = currentProgress;
+                rowNumWithLowestProgress = rowNum;
+            }
+        } // loop end
+
+        // get and click the right checkbox
+        String cssSelector = "tbody tr:nth-child(" + rowNumWithLowestProgress + ") td:nth-child(3) input";
+        WebElement actualValue = TABLE.getTable().findElement(By.cssSelector(cssSelector));
+        Interacts.click(actualValue);
+
+        // ASSERT
+        Assert.assertTrue(expectedCheckbox.isSelected());
     }
 }
