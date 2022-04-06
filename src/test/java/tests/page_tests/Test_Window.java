@@ -130,4 +130,30 @@ public class Test_Window extends _Base_Test {
         Assert.assertEquals(windows.size(), 1);
         Assert.assertTrue(windows.contains(startingWindow));
     }
+
+    /**
+     * Test 4 - wait for window
+     */
+    @Test
+    public void VerifyCanWaitForWindows() {
+        // SETUP
+        WebDriver driver = Drivers.getDriver();
+        WebElement button = WINDOW.getWindowFour_waitForTwoWindows();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        String startingWindow = driver.getWindowHandle();
+        Set<String> windows;
+
+        // INTERACT
+        // click button
+        wait.until(ExpectedConditions.elementToBeClickable(button));
+        Interacts.click(button);
+
+        try {
+            Thread.sleep(5500);
+        } catch (InterruptedException ignore) {}
+
+        // ASSERT
+        windows = driver.getWindowHandles();
+        Assert.assertEquals(windows.size(), 3);
+    }
 }
