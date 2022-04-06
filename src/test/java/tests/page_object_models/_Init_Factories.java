@@ -23,6 +23,7 @@ public class _Init_Factories {
     private final Factory_RadioButton radioButton;
     private final Factory_Checkbox checkbox;
     private final Factory_Table table;
+    private final Factory_Alert alert;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -36,6 +37,7 @@ public class _Init_Factories {
         this.radioButton = new Factory_RadioButton();
         this.checkbox = new Factory_Checkbox();
         this.table = new Factory_Table();
+        this.alert = new Factory_Alert();
     }
 
     // GETTER / INITIALIZER
@@ -84,5 +86,9 @@ public class _Init_Factories {
 
     public Factory_Table getTable() {
         return table;
+    }
+
+    public Factory_Alert getAlert() {
+        return alert;
     }
 }
