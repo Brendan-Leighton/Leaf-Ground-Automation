@@ -86,4 +86,19 @@ public class Test_Frames extends _Base_Test {
         // ASSERT
         Assert.assertEquals(actualButtonText, expectedButtonText);
     }
+
+    /**
+     * Test 3 - count iframes
+     */
+    @Test
+    public void VerifyProperNumberOfIframes() {
+        // SETUP
+        int iframeCount = 0;
+
+        // INTERACT
+        iframeCount = FRAMES.searchForIFrames();
+
+        // ASSERT
+        Assert.assertEquals(iframeCount, 5);
+    }
 }

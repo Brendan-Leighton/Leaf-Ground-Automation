@@ -36,7 +36,7 @@ public class Factory_Frames extends Factory__Index {
         WebDriver driver = Drivers.getDriver();
 
         // get all iframes
-        List<WebElement> iframes = driver.findElements(By.xpath("//iframe"));
+        List<WebElement> iframes = driver.findElements(By.cssSelector("iframe"));
 
         // initialize count with iframes who are a direct descendant of the current element
         int iFrameCount = iframes.size();
