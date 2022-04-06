@@ -50,4 +50,27 @@ public class Test_Alert extends _Base_Test {
         // assert text we got from alert
         Assert.assertEquals(alertText, "I am an alert box!");
     }
+
+    /**
+     * Test 2 - Enter, press OK button, and exit an alert
+     */
+    @Test
+    public void VerifyOpenAlertPressButton() {
+        // SETUP
+        WebElement buttonOpenAlert = ALERT.getAlertButtonTwo();
+        WebDriverWait wait = new WebDriverWait(Drivers.getDriver(), 5);
+        WebDriver driver = Drivers.getDriver();
+
+        // INTERACT
+        // click button
+        wait.until(ExpectedConditions.elementToBeClickable(buttonOpenAlert));
+        Interacts.click(buttonOpenAlert);
+        // handle alert
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
+
+        // assert text we got from alert
+        Assert.assertEquals(alertText, "Press a button!");
+    }
 }
