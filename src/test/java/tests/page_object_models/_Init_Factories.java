@@ -26,6 +26,7 @@ public class _Init_Factories {
     private final Factory_Table table;
     private final Factory_Alert alert;
     private final Factory_Frames frames;
+    private final Factory_Window window;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -41,6 +42,7 @@ public class _Init_Factories {
         this.table = new Factory_Table();
         this.alert = new Factory_Alert();
         this.frames = new Factory_Frames();
+        this.window = new Factory_Window();
     }
 
     // GETTER / INITIALIZER
@@ -97,5 +99,9 @@ public class _Init_Factories {
 
     public Factory_Frames getFrames() {
         return frames;
+    }
+
+    public Factory_Window getWindow() {
+        return window;
     }
 }
