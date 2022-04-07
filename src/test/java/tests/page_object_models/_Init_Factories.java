@@ -36,6 +36,8 @@ public class _Init_Factories {
     private final Factory_Download download;
     private final Factory_Upload upload;
     private final Factory_Tooltip tooltip;
+//    private final Factory_WaitToDisappear waitToDisappear;
+    private final Factory_WaitToAppear waitToAppear;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -61,6 +63,8 @@ public class _Init_Factories {
         this.download = new Factory_Download();
         this.upload = new Factory_Upload();
         this.tooltip = new Factory_Tooltip();
+//        this.waitToDisappear = new Factory_WaitToDisappear();
+        this.waitToAppear = new Factory_WaitToAppear();
     }
 
     // GETTER / INITIALIZER
@@ -134,4 +138,10 @@ public class _Init_Factories {
     public Factory_Upload getUpload() { return upload; }
 
     public Factory_Tooltip getTooltip() { return tooltip; }
+
+//    public Factory_WaitToDisappear getWaitToDisappear() { return waitToDisappear; }
+
+    public Factory_WaitToAppear getWaitToAppear() {
+        return waitToAppear;
+    }
 }
