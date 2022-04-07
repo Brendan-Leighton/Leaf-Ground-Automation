@@ -57,25 +57,27 @@ public class Test_Drag_and_Droppable extends _Base_Test {
     @Test
     public void VerifyCanDropElement() {
         // NAVIGATE
-        DRAGGABLE.navigateTo(HomePageLink_Draggable);
+        DROPPABLE.navigateTo(HomePageLink_Droppable);
 
         // SETUP
         WebDriver driver = Drivers.getDriver();
-        WebElement draggableEl = DRAGGABLE.getDraggableDiv();
-        WebElement containerEl = DRAGGABLE.getContainerDiv();
+        WebElement draggableEl = DROPPABLE.getDragEl();
+        WebElement dropArea = DROPPABLE.getDropArea();
 
-        int draggable_dragEl_X = draggableEl.getLocation().getX();
-        int draggable_dragEl_Y = draggableEl.getLocation().getY();
-        int xOffset = 50;
-        int yOffset = 75;
+        // drag el
+        int draggableEl_X = draggableEl.getLocation().getX();
+        int draggableEl_Y = draggableEl.getLocation().getY();
+        // drop area
+        int dropArea_X = dropArea.getLocation().getX();
+        int dropArea_Y = dropArea.getLocation().getY();
 
         // move draggable element
         Actions drag = new Actions(driver);
-        drag.dragAndDropBy(draggableEl, xOffset, yOffset).perform();
+        drag.dragAndDropBy(draggableEl, dropArea_X - draggableEl_X, dropArea_Y - draggableEl_Y).perform();
 
         // assert draggable has moved
-        Assert.assertEquals(draggableEl.getLocation().getX(), draggable_dragEl_X + xOffset);
-        Assert.assertEquals(draggableEl.getLocation().getY(), draggable_dragEl_Y + yOffset);
+        Assert.assertEquals(draggableEl.getLocation().getX(), dropArea_X);
+        Assert.assertEquals(draggableEl.getLocation().getY(), dropArea_Y);
     }
 
 }
