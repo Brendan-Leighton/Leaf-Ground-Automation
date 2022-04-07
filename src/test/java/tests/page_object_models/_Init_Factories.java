@@ -31,6 +31,7 @@ public class _Init_Factories {
     private final Factory_Draggable draggable;
     private final Factory_Droppable droppable;
     private final Factory_Selectable selectable;
+    private final Factory_Sortable sortable;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -51,6 +52,7 @@ public class _Init_Factories {
         this.draggable = new Factory_Draggable();
         this.droppable = new Factory_Droppable();
         this.selectable = new Factory_Selectable();
+        this.sortable = new Factory_Sortable();
     }
 
     // GETTER / INITIALIZER
@@ -114,4 +116,6 @@ public class _Init_Factories {
     public Factory_Droppable getDroppable() { return droppable; }
 
     public Factory_Selectable getSelectable() { return selectable; }
+
+    public Factory_Sortable getSortable() { return sortable; }
 }
