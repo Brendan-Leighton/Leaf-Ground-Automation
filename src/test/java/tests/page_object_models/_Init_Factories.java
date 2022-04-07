@@ -30,6 +30,7 @@ public class _Init_Factories {
     private final Factory_Calendar calendar;
     private final Factory_Draggable draggable;
     private final Factory_Droppable droppable;
+    private final Factory_Selectable selectable;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -49,6 +50,7 @@ public class _Init_Factories {
         this.calendar = new Factory_Calendar();
         this.draggable = new Factory_Draggable();
         this.droppable = new Factory_Droppable();
+        this.selectable = new Factory_Selectable();
     }
 
     // GETTER / INITIALIZER
@@ -110,4 +112,6 @@ public class _Init_Factories {
     public Factory_Draggable getDraggable() { return draggable; }
 
     public Factory_Droppable getDroppable() { return droppable; }
+
+    public Factory_Selectable getSelectable() { return selectable; }
 }
