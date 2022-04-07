@@ -35,6 +35,7 @@ public class _Init_Factories {
     private final Factory_AutoComplete autoComplete;
     private final Factory_Download download;
     private final Factory_Upload upload;
+    private final Factory_Tooltip tooltip;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -59,6 +60,7 @@ public class _Init_Factories {
         this.autoComplete = new Factory_AutoComplete();
         this.download = new Factory_Download();
         this.upload = new Factory_Upload();
+        this.tooltip = new Factory_Tooltip();
     }
 
     // GETTER / INITIALIZER
@@ -130,4 +132,6 @@ public class _Init_Factories {
     public Factory_Download getDownload() { return download; }
 
     public Factory_Upload getUpload() { return upload; }
+
+    public Factory_Tooltip getTooltip() { return tooltip; }
 }
