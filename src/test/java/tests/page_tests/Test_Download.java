@@ -39,9 +39,8 @@ public class Test_Download extends _Base_Test {
         WebDriver driver = Drivers.getDriver();
         WebDriverWait wait = new WebDriverWait(driver, 5);
         WebElement link = DOWNLOAD.getLinks().get(0);
-        File downloadsFolder_before = new File("C:\\Users\\br3nd\\Downloads");
-        int downloadsFolder_startingSize = downloadsFolder_before.listFiles().length;
-        File downloadsFolder_after;
+        File downloadsFolder = new File("C:\\Users\\br3nd\\Downloads");
+        int downloadsFolder_startingSize = Objects.requireNonNull(downloadsFolder.listFiles()).length;
         int downloadsFolder_endingSize;
 
         // get BEFORE download folder size
@@ -50,9 +49,10 @@ public class Test_Download extends _Base_Test {
         Interacts.click(link);
         try {
             Thread.sleep(5_000);
-        } catch (InterruptedException ignore) {}
-        downloadsFolder_after = new File("\\Users\\br3nd\\Downloads");
-        downloadsFolder_endingSize = Objects.requireNonNull(downloadsFolder_after.listFiles()).length;
+        } catch (InterruptedException e) {
+            System.out.println("Thread.sleep was stopped");
+        }
+        downloadsFolder_endingSize = Objects.requireNonNull(downloadsFolder.listFiles()).length;
 
         // ASSERT
         Assert.assertEquals(downloadsFolder_endingSize, downloadsFolder_startingSize + 1);
