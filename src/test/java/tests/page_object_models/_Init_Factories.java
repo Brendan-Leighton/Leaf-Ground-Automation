@@ -32,6 +32,7 @@ public class _Init_Factories {
     private final Factory_Droppable droppable;
     private final Factory_Selectable selectable;
     private final Factory_Sortable sortable;
+    private final Factory_AutoComplete autoComplete;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -53,6 +54,7 @@ public class _Init_Factories {
         this.droppable = new Factory_Droppable();
         this.selectable = new Factory_Selectable();
         this.sortable = new Factory_Sortable();
+        this.autoComplete = new Factory_AutoComplete();
     }
 
     // GETTER / INITIALIZER
@@ -118,4 +120,6 @@ public class _Init_Factories {
     public Factory_Selectable getSelectable() { return selectable; }
 
     public Factory_Sortable getSortable() { return sortable; }
+
+    public Factory_AutoComplete getAutoComplete() { return autoComplete; }
 }
