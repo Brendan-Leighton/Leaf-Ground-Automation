@@ -17,7 +17,7 @@ import utils.Interacts;
 import java.util.List;
 
 
-public class Test_Selectable extends _Base_Test {
+public class Test_Select_and_Sortable extends _Base_Test {
 
     // PROPS
 
