@@ -34,6 +34,7 @@ public class _Init_Factories {
     private final Factory_Sortable sortable;
     private final Factory_AutoComplete autoComplete;
     private final Factory_Download download;
+    private final Factory_Upload upload;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -57,6 +58,7 @@ public class _Init_Factories {
         this.sortable = new Factory_Sortable();
         this.autoComplete = new Factory_AutoComplete();
         this.download = new Factory_Download();
+        this.upload = new Factory_Upload();
     }
 
     // GETTER / INITIALIZER
@@ -126,4 +128,6 @@ public class _Init_Factories {
     public Factory_AutoComplete getAutoComplete() { return autoComplete; }
 
     public Factory_Download getDownload() { return download; }
+
+    public Factory_Upload getUpload() { return upload; }
 }
