@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 // PAGE MODELS
-import tests.page_object_models.Factory_WaitToAppear;~
+import tests.page_object_models.Factory_WaitToAppear;
 import tests.page_object_models._Init_Factories;
 // CUSTOM UTILS
 import utils.Drivers;
