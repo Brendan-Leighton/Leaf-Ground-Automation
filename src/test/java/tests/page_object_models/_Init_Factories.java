@@ -39,6 +39,7 @@ public class _Init_Factories {
     private final Factory_WaitToDisappear waitToDisappear;
     private final Factory_WaitToAppear waitToAppear;
     private final Factory_WaitForTextChange waitForTextChange;
+    private final Factory_WaitForAlert waitForAlert;
 
     // CONSTRUCTOR
     private _Init_Factories() {
@@ -67,6 +68,7 @@ public class _Init_Factories {
         this.waitToDisappear = new Factory_WaitToDisappear();
         this.waitToAppear = new Factory_WaitToAppear();
         this.waitForTextChange = new Factory_WaitForTextChange();
+        this.waitForAlert = new Factory_WaitForAlert();
     }
 
     // GETTER / INITIALIZER
@@ -146,4 +148,6 @@ public class _Init_Factories {
     public Factory_WaitToAppear getWaitToAppear() { return waitToAppear; }
 
     public Factory_WaitForTextChange getWaitForTextChange() { return waitForTextChange; }
+
+    public Factory_WaitForAlert getWaitForAlert() { return waitForAlert; }
 }
