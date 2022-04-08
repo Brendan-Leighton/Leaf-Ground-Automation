@@ -5,9 +5,30 @@
             verbose="2" preserve-order="true"
             name="C:/Users/br3nd/Documents/Code/Java - Testing/Leaf-Ground-Automation/README.md"
     >
-        <classes>
-            <class name="tests.page_tests.Test_Home"/>
+        <classes> <!-- Alphabetical Order -->
+            <class name="tests.page_tests.Test_Alert"/>
+            <class name="tests.page_tests.Test_AutoComplete"/>
+            <class name="tests.page_tests.Test_Button"/>
+            <class name="tests.page_tests.Test_Calendar"/>
+            <class name="tests.page_tests.Test_Checkbox"/>
+            <class name="tests.page_tests.Test_Download"/>
+            <class name="tests.page_tests.Test_Drag_and_Droppable"/>
+            <class name="tests.page_tests.Test_Dropdown"/>
             <class name="tests.page_tests.Test_Edit"/>
+            <class name="tests.page_tests.Test_Frames"/>
+            <class name="tests.page_tests.Test_Home"/>
+            <class name="tests.page_tests.Test_Hyperlinks"/>
+            <class name="tests.page_tests.Test_Image"/>
+            <class name="tests.page_tests.Test_RadioButton"/>
+            <class name="tests.page_tests.Test_Select_and_Sortable"/>
+            <class name="tests.page_tests.Test_Table"/>
+            <class name="tests.page_tests.Test_Tooltip"/>
+            <class name="tests.page_tests.Test_Upload"/>
+            <class name="tests.page_tests.Test_WaitForAlert"/>
+            <class name="tests.page_tests.Test_WaitForTextChange"/>
+            <class name="tests.page_tests.Test_WaitToAppear"/>
+            <class name="tests.page_tests.Test_WaitToDisappear"/>
+            <class name="tests.page_tests.Test_Window"/>
         </classes>
     </test>
 </suite>
